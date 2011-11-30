@@ -1,0 +1,15 @@
+<h1>Edit Presentations</h1>
+
+<div class="form">
+  <%= error_messages_for :presentation -%>
+  
+  <fieldset>
+  <legend>Enter Presentation Details </legend>
+  <% form_for :presentation, :url => { :action => "update", :meeting_id => @meeting.id, :id => @presentation.id } do |form| %>
+    <%= render :partial => 'form', :object => form %>
+    
+    <%= submit_tag "Save", :class => "submit" %> &nbsp;
+    <%= link_to "cancel", { :controller => "meetings", :action => "show", :id => @meeting.id }, :class => "cancel" %>
+  <% end %>
+  </fieldset>
+</div>

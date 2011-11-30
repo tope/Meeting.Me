@@ -1,0 +1,12 @@
+<div>
+  <%= form.label :title %>:<br />
+  <%= form.text_field :title, :size => 35, :class => "text" %>
+</div>
+<div>
+  <%= form.label	:description %>:<br />
+  <%= form.text_area	:description, :rows => 4, :class => "text" %>
+</div>
+<div>
+  <%= form.label	:user_id, "Presented by" %>:
+  <%= form.collection_select(:user_id, User.find(:all), :id, :name) %>
+</div>

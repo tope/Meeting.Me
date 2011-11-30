@@ -1,0 +1,14 @@
+<div>
+  <%= form.label			:meets_on %>:<br />
+  <%= form.date_select		:meets_on %>
+</div>
+
+<div>
+	<%= form.label			:location %>:<br />
+	<%= form.text_field		:location,	:size => 35, :class => "text" %>
+</div>
+
+<div>
+	<%= form.label			:description	%>:<br />
+	<%= form.text_area		:description, :rows => 4, :class => "text" %>
+</div>

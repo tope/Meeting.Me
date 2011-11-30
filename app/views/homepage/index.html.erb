@@ -1,0 +1,25 @@
+<h1>Who We Are</h1>
+<p>
+Meetings.Me is a community based application useful for you to  schedule your appointments, meet with your friends, etc. 
+This application is based on the <strong>Ruby and the Rails</strong> framework.
+
+</p> 
+
+<div class="highlight">
+<% if @meeting %> 
+
+<div class="next_meeting">
+<h2>Up &amp; Coming</h2> <p>
+<span class="date"> <%= link_to h("#{@meeting.name} @ 7:00pm"),
+:controller => "meetings", :action	=> :show, :id	=> @meeting.id %>
+</span> : <span class="location"><%=h @meeting.location %></span> </p>
+</div>
+<% end %> 
+
+
+</div>
+
+<h3>Developers for this application Wanted</h3>
+<p>
+<%= mail_to "tope.omitola@googlemail.com", "Contact us" %> if you are interested in contributing to this application.
+</p>

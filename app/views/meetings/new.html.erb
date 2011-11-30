@@ -1,0 +1,19 @@
+<h1> Create a New Meeting </h1>
+
+<div	class="form">
+  <%= error_messages_for	:meeting -%>
+  
+  <fieldset>
+  <legend> Enter Meeting Details </legend>
+  <% form_for :meeting, :url => { :action => "create" } do |form| %>
+  	
+  	<%= render :partial => 'form', :locals => { :form => form } %>
+  	
+  	<%= submit_tag "Create",	:class => "submit" %> &nbsp;
+  	<%=	link_to	"cancel", { :action => "index" }, :class => "cancel" %>
+  <% end %>
+  
+  </fieldset>
+</div>
+
+

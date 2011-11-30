@@ -1,0 +1,346 @@
+/* =MAIN
+------------------------------------- */
+body, td, input, select, textarea, a {
+  font-size:  100%;
+  font-family: arial, helvetica, verdana, sans-serif;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, 
+pre, form, fieldset, input, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: #333;
+  background-color: #7C9D51;
+}
+img {
+  border-width: 0;
+}
+a:link {
+  color: #060;
+}
+a:visited {
+  color: #093;
+}
+a:hover {
+  color: #fff;
+  background-color: #060;
+}
+p {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 12px 0;
+}
+h1 {
+  font-size: 24px;
+  line-height: 48px;
+  margin: 12px 0 0 0;
+}
+h2 {
+  font-size: 20px;
+  line-height: 24px;
+  margin: 8px 0 4px 0;
+}
+h3 {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 12px 0 0 0;
+}
+
+
+/* =FLOATS
+------------------------------------- */
+/* clear floats */
+.clear:after,
+#nav:after, 
+.highlight:after,
+#new_presentation div:after {
+  content: "."; 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  visibility: hidden;
+}
+.clear,
+#nav,
+.highlight, 
+#new_presentation div {
+  display: inline-block;
+}
+
+/* =LAYOUT
+------------------------------------- */
+#wrapper {
+  width: 782px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+#content {
+  padding: 1px 14px;
+  border-left: 1px solid #DAD1B4;
+  border-right: 1px solid #DAD1B4;
+}
+#content dl {
+  margin-bottom: 18px;
+}
+
+/* =HEADER
+------------------------------------- */
+#logo {
+  background-color: #7C9D51;
+  text-align: center;
+}
+#nav {
+  display: block;
+  background-color: #F8F5EE;
+  border-left: 1px solid #DAD1B4;
+  border-right: 1px solid #DAD1B4;
+  border-bottom: 1px solid #ECE6D2;
+}
+#nav ul {
+  float: left;
+  list-style-type: none;
+  margin-left: 5px;
+}
+#nav li {
+  float: left;
+  padding: 6px 0;
+  font-weight: bold;
+  font-size: 14px;
+}
+#nav li a {
+  float: left;
+  display: block;
+  padding: 4px 12px;
+  text-decoration: none;
+}
+#nav div {
+  float: right;
+  padding: 10px;
+  margin-right: 5px;
+  text-align: right;
+  font-style: italic;
+  font-size: 13px;
+}
+#nav div a {
+  padding: 3px 0;
+}
+
+/* highlight tabs */
+.homepage      #nav_home a,
+.meetings      #nav_meetings a, 
+.presentations #nav_meetings a,
+.users         #nav_users a, 
+.photos        #nav_photos a,
+#nav a:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* =FOOTER 
+------------------------------------- */
+#footer {
+  background-color: #F8F5EE;
+  border: 1px solid #DAD1B4;
+  border-top-color: #ECE6D2;
+}
+
+/* =FLASH and ERRORS
+------------------------------------- */
+#spinner {
+  vertical-align: middle;
+  margin-left: 6px;
+}
+#flash_notice {
+  color: #090;
+  margin-bottom: 12px;
+  padding: 5px 10px;
+  background-color: #F8F5EE;
+}
+.errorExplanation {
+  padding: 5px 10px;
+  background-color: #F8F5EE;
+}
+.errorExplanation h2 {
+  color: #C00;
+  font-size: 16px;
+}
+.errorExplanation p {
+  margin-bottom: 6px;
+  font-style: italic;
+  color: #666;
+  font-size: 14px;
+}
+.errorExplanation ul {
+  margin: 0 20px;
+  font-size: 14px;
+}
+.fieldWithErrors {
+  display: inline;
+}
+
+/* =BOXES
+------------------------------------- */
+.form fieldset, 
+.details, 
+.meeting_list, 
+.highlight {
+  margin: 0 0 12px 0;
+  border: 1px solid #ECE6D2;
+  padding: 8px 12px;
+  background-color: #FCFBF7;
+  line-height: 24px;
+}
+
+/* =HOME
+------------------------------------- */
+.highlight {
+  margin: 24px 0;
+}
+.next_meeting,
+.join {
+  width: 340px;
+  float: left;
+}
+.next_meeting p, 
+.join p {
+  font-size: 14px;
+  color: #454545;
+}
+.next_meeting {
+  margin-right: 20px;
+}
+.next_meeting .location {
+  font-weight: bold;
+}
+.next_meeting .present {
+  font-style: italic;
+}
+
+/* =ADMIN
+------------------------------------- */
+.form legend {
+  font-weight: bold;
+}
+.form div {
+  line-height: 24px;
+  margin-bottom: 12px;
+}
+.form .text {
+  width: 450px;
+}
+.form .short {
+  width: 200px;
+}
+.form .radio {
+  vertical-align: top;
+}
+.details dl {
+  margin-top: 6px;
+}
+.details dt {
+  float: left;
+  width: 100px;
+  font-weight: bold;
+}
+.details ul {
+  list-style-type: none;
+}
+.details ul p.user {
+  font-style: italic;
+  font-size: 14px;
+}
+.details ul p.description {
+  color: #666;
+  font-size: 15px;
+}
+.details ul, 
+.details .add {
+  margin-left: 10px;
+}
+.details h3 span {
+  font-weight: normal;
+}
+
+/* =MEETINGS
+------------------------------------- */
+.meeting_list ul {
+  list-style: none;
+}
+.meeting_list li {
+  line-height: 24px;
+}
+.presentation_list {
+  margin: 0 10px;
+  font-size: 13px;
+  font-style: italic;
+}
+.add, .modify, .cancel {
+  font-size: 13px;
+}
+.submit {
+  vertical-align: middle;
+}
+
+/* =PRESENTATIONS
+------------------------------------- */
+#new_presentation {
+  margin-bottom: 12px;
+  border: 1px solid #ECE6D2;
+  padding: 12px;
+  background-color: #fff;
+}
+#new_presentation div {
+  width: 100%;
+}
+#new_presentation label {
+  display: block; 
+  float: left;
+  width: 100px;
+  font-size: 15px;
+}
+#new_presentation .submit {
+  margin-left: 100px;
+}
+#new_presentation #errorExplanation {
+  width: 680px;
+}
+.details #no_presentations {
+  color: #666;
+  font-size: 15px;
+  margin-left: 8px;
+}
+
+/* =MEMBERS
+------------------------------------- */
+.user_list ul {
+  margin: 0 0 12px 0;
+  list-style-type: none;
+  line-height: 24px;
+}
+.user_list li {
+  display: block;
+  padding: 6px 10px;
+}
+.user_list li.shade {
+  background-color: #F8F5EE;
+}
+.email {
+  font-size: 14px;
+}
+div.modify {
+  margin-top: 12px;
+}
+.user_list img {
+  vertical-align: middle;
+}
+img.profile {
+  float: left;
+  border: 1px solid #666;
+  margin-right: 12px;
+}
+.talks span {
+  font-size: 14px;
+  font-style: italic;
+  color: #666;
+}

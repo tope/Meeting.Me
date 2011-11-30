@@ -1,0 +1,61 @@
+<h1><%= link_to "Meetings", :action => "index" %> 
+  &rarr; <%=h @meeting.name %>
+</h1>
+
+<%= flash_notice %>
+
+<div class="details">
+  <dl>
+    <dt>When:</dt><dd><%=h @meeting.name %> @ 7:00pm</dd>
+    <dt>Where:</dt><dd><%=h @meeting.location %></dd>
+    <dt>Agenda:</dt><dd><%=h @meeting.description %></dd>
+  </dl>
+
+  <h2>Presentations</h2>
+  <ul id="presentations">
+    <% for presentation in @meeting.presentations %>
+    <li id="presentation_<%=h presentation.id %>">
+      <h3>
+        <%=h presentation.title %>&nbsp; 
+        <% if admin? %>
+        <span class="modify">
+        (<%= link_to "edit", :controller => "presentations", 
+                             :action     => "edit", 
+                             :meeting_id => presentation.meeting.id, 
+                             :id         => presentation.id %>  |  
+
+        <%= link_to "destroy", { :controller => "presentations", 
+                                 :action     => "destroy", 
+                                 :meeting_id => presentation.meeting.id,
+                                 :id         => presentation.id }, 
+                                :confirm => 'Are you sure?', 
+                                :method  => :delete %>)
+        </span>
+        <% end %>
+      </h3>
+      <p class="user">By: <%=h presentation.user.name %></p>
+      <p class="description"><%=h presentation.description %></p>
+    </li>
+    <% end %>
+  </ul>
+
+  <% if @meeting.presentations.size == 0 %>
+  <p id="no_presentations">
+    There are no presentations for this meeting.
+  </p>
+  <% end %>
+
+  <% if admin? %>
+  <p class="add">
+    <%= link_to "add presentation", :controller => "presentations", 
+                                    :action     => "new", 
+                                    :meeting_id => @meeting.id  %>
+  </p>
+  <p class="modify">
+    <%= link_to "edit", :action => "edit", :id => @meeting.id %>  |  
+    <%= link_to "destroy", { :action => "destroy", :id => @meeting.id },
+                            :confirm => 'Are you sure?', 
+                            :method  => :delete %>
+  </p>
+  <% end %>
+</div>

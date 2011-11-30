@@ -1,0 +1,21 @@
+admin_user:
+  email:	t.omitola@ecs.soton.ac.uk
+  name:		Tope Omitola
+  admin:	true
+  salt:		test_salt
+  encrypted_password:	<%= User.encrypt('topeomitola', 'test_salt') %>
+  
+non_admin_user:
+  email:	tope.omitola@gmail.com
+  name:		T. Omitola
+  admin:	false
+  salt:		test_salt
+  encrypted_password:	<%= User.encrypt('tomitola', 'test_salt') %>
+  
+  
+non_admin_user:
+  email:	tolu.omitola@gmail.com
+  name:		Tolu Omitola
+  admin:	false
+  salt:		test_salt
+  encrypted_password:	<%= User.encrypt('tolulope', 'test_salt') %>

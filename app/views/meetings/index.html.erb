@@ -1,0 +1,26 @@
+<h1>Meetings</h1>
+
+<div	class="meeting_list">
+	<h2> Upcoming Meetings</h2>
+	<ul>
+		<% for meeting in @upcoming_meetings %>
+		<li>
+			<%= link_to h(meeting.name), meeting_path(:id => meeting.id) %>
+		</li>
+		<% end %>
+	</ul>
+	<p class="add">
+		<%= link_to "add meeting", new_meeting_path %>
+	</p>
+</div>
+
+<div	class="meeting_list">
+	<h2>Past Meetings </h2>
+	<ul>
+		<% for meeting in @past_meetings %>
+		<li>
+			<%= link_to h(meeting.name), meeting_path(:id => meeting.id) %>
+		<li>
+		<% end %>
+	</ul>
+</div>

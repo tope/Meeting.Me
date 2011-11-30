@@ -1,0 +1,17 @@
+<h1>Create a New Presentation</h1>
+
+<div class="form">
+  <%= error_messages_for :presentation -%>
+  
+  <fieldset>
+  <legend>Enter Presentation Details</legend>
+  <% form_for :presentation, :url => { :action => "create", :meeting_id => @meeting.id } do |form| %>
+    <%= render :partial => 'form', :object => form %>
+    <%= submit_tag "Create", :class => "submit" %> &nbsp;
+    <%= link_to "cancel", { :controller => "meetings", :action => "show", :id => @meeting.id },
+    						:class => "cancel" 
+    %>
+  <% end %>
+  </fieldset>
+</div>
+  

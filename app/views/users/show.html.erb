@@ -1,0 +1,30 @@
+
+
+<h1><%= link_to "Users", :action => "index" %>&rarr; Member Profile</h1>
+
+<%= flash_notice %>
+
+<div class="details">
+  <%= image_tag "profile.gif", :alt => "profile", :class => "profile" %>
+  <h2><%=h @user.name %> <%= image_for_admin_status(@user) %></h2>
+  <p class="email"><%= mail_to h(@user.email) %></p>
+  <p><%=h @user.profile %></p>
+
+  <% # admin can edit everyone %>
+  <% if admin? %>
+  <div class="modify admin">
+    <%= link_to "edit", :action => "edit", :id => @user.id %> |
+    <%= link_to "destroy", { :action => "destroy", :id => @user.id },
+                            :confirm => 'Are you sure?',
+                            :method  => :delete %>
+  </div>
+
+  <% # user can edit himself %>
+  <% elsif user_owns_record? %>
+  <div class="modify user">
+    <%= link_to "edit your profile", :action => "edit",
+                                     :id     => @user.id %>
+  </div>
+  <% end %>
+</div>
+     

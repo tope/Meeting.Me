@@ -1,0 +1,13 @@
+
+creating_rake_tasks:
+  meeting:		todays_meeting
+  user:			admin_user
+  title:		Creating Rake Tasks
+  description:	How to automate Rails tasks 
+
+rjs_templates:
+  meeting:		todays_meeting
+  user:			admin_user
+  title:		RJS Templates
+  description:	How to write Ruby Javascript templates
+  

@@ -1,0 +1,16 @@
+<h1>Members</h1>
+
+<%= flash_notice %>
+
+<div	class="user_list">
+  <ul>
+    <% for user in @users %>
+    <li	class="<%= cycle('shade', '') %>">
+      <%= link_to h(user.name), :action => "show", :id => user.id %>
+      <%= image_for_admin_status(user) %><br />     
+      <span class="email"><%= h(user.email) %></span>
+    </li> 
+    <% end %>
+  </ul>
+</div>
+

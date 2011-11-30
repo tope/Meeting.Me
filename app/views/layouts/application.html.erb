@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html> <head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8"> <title>Meetings.Me <%= ": #{@title} " if @title %></title> <%= stylesheet_link_tag "screen", :media => "screen" %>
+</head>
+<body	class="<%=	controller.controller_name	%>" > <div	id="wrapper" >
+<div id="logo"> 
+<%= link_to_unless_current(image_tag("logo.gif", :alt => "MeetingsMe", :size => "64x78"), :controller => "homepage") %>
+</div>
+
+<div id="nav"> <ul>
+<li id="nav_meetings"> <%= link_to "Meetings", :controller => "meetings" %>
+</li> 
+<li id="nav_users">
+<%= link_to "Members", :controller => "users" %>
+</li> 
+<li id="nav_home"> <%= link_to "Home", :controller => "homepage" %>
+</li>
+</ul>
+</div>
+<div>
+<% if logged_in? %>
+  <%= link_to "Your Profile", :controller => "users", :action => "show", :id => @current_user.id %> &nbsp;
+  <%= link_to "Logout", :controller => "sessions", :action => "destroy" %>
+<% else %>
+  <%= link_to "Join us", :controller => "users", :action => "new" %>&nbsp;
+  <%= link_to "Login", :controller => "sessions", :action => "new" %>
+<% end %>
+</div>
+
+<div id="content"> <%= yield :layout %>
+</div>
+<div id="footer">&nbsp;</div> </div>
+</body> </html>
